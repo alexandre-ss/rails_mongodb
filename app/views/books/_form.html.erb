@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :book_section %>
-    <%= form.text_field :book_section %>
+    <%= form.select :book_section, options_for_select(@book_section_selector.map { |selector| [selector['title'], selector['_id'] ]}), {}, required: true %>
   </div>
 
   <div class="actions">
