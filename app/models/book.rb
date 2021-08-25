@@ -6,7 +6,7 @@ class Book
   field :abstract, type: String
 
   validates :title, presence: true, uniqueness: { case_sensitive: true }
-  validates :author, presence: true, uniqueness: { case_sensitive: true }
+  validates :author, presence: true
 
 
   belongs_to :book_section
