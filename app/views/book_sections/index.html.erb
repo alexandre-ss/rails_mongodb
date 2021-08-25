@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Book Sections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Max quantity</th>
+      <th>Books quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @book_sections.each do |book_section| %>
+      <tr>
+        <td><%= book_section.title %></td>
+        <td><%= book_section.max_quantity %></td>
+        <td><%= book_section.books_quantity %></td>
+        <td><%= link_to 'Show', book_section %></td>
+        <td><%= link_to 'Edit', edit_book_section_path(book_section) %></td>
+        <td><%= link_to 'Destroy', book_section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book Section', new_book_section_path %>

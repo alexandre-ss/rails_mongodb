@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book_section.title %>
+</p>
+
+<p>
+  <strong>Max quantity:</strong>
+  <%= @book_section.max_quantity %>
+</p>
+
+<p>
+  <strong>Books quantity:</strong>
+  <%= @book_section.books_quantity %>
+</p>
+
+<%= link_to 'Edit', edit_book_section_path(@book_section) %> |
+<%= link_to 'Back', book_sections_path %>

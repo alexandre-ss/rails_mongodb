@@ -1,0 +1,32 @@
+<%= form_with(model: book_section) do |form| %>
+  <% if book_section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book_section.errors.count, "error") %> prohibited this book_section from being saved:</h2>
+
+      <ul>
+        <% book_section.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_quantity %>
+    <%= form.number_field :max_quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :books_quantity %>
+    <%= form.number_field :books_quantity %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
