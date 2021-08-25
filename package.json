@@ -1,5 +1,5 @@
 {
-  "name": "library",
+  "name": "rails_mongodb",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
