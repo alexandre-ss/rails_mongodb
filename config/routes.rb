@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root 'book_sections#index'
   resources :book_sections
 
   scope 'book' do

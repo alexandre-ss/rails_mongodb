@@ -1,19 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%= render '/layouts/navbar' %>
+<div class="d-flex align-items-center">
+  <div class="container">
+    <div class='row'>
+      <div class="col-md-9 col-lg-6 mx-auto">
+        <div class = "card card-form my-5">
+          <div class = "card-body">  
+              <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book_section.title %>
-</p>
+              <div>
+                <h5>Gênero:</h5>
+                <h6><%= @book_section.title %></h6>
+              </div>
 
-<p>
-  <strong>Max quantity:</strong>
-  <%= @book_section.max_quantity %>
-</p>
+              <div>
+                <h5>Quantidade máxima de livros:</h5>
+                <h6><%= @book_section.max_quantity %></h6>
+              </div>
 
-<p>
-  <strong>Books quantity:</strong>
-  <%= @book_section.books_quantity %>
-</p>
+              <div>
+                <h5>Quantidade atual de livros:</h5>
+                <h6><%= @book_section.books_quantity %></h6>
+              </div>
+              <div class = "text-center">
+                <%= link_to 'Edit', edit_book_section_path(@book_section), class: "btn btn-primary"%> |
+                <%= link_to 'Back', book_sections_path, class: "btn btn-secondary" %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_book_section_path(@book_section) %> |
-<%= link_to 'Back', book_sections_path %>

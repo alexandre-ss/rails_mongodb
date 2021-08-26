@@ -18,15 +18,15 @@ class BookSectionsController < ApplicationController
   def create
     @book_section = BookSection.new(book_section_params)
 
-    respond_to do |format|
-      if @book_section.save
-        format.html { redirect_to @book_section, notice: "Book section was successfully created." }
-        format.json { render :show, status: :created, location: @book_section }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @book_section.errors, status: :unprocessable_entity }
-      end
+    begin
+      @book_section.save
+      flash[:success] = "Gênero criado com sucesso"
+      redirect_to @book_section
+    rescue StandardError => e
+      flash[:error] = e.message
+      redirect_back fallback_location: new_book_section_path      
     end
+
   end
 
   def update

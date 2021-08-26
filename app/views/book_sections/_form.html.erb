@@ -1,32 +1,33 @@
-<%= form_with(model: book_section) do |form| %>
-  <% if book_section.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(book_section.errors.count, "error") %> prohibited this book_section from being saved:</h2>
+<div class="d-flex align-items-center">
+  <div class="container text-center">
+    <div class='row'>
+      <div class="col-md-9 col-lg-6 mx-auto">
+        <div class = "card card-form my-5">
+          <div class = "card-body">
+            <%= form_with(model: book_section) do |form| %>
+              <div class="form-group">
+                <%= form.text_field :title, class: "form-control mb-2", placeholder: "Título do gênero" %>
+              </div>
 
-      <ul>
-        <% book_section.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+              <div class="form-group">
+                <%= form.number_field :max_quantity, class: "form-control mb-2", placeholder: "quantidade máxima" %>
+              </div>
+
+              <div class="form-group">
+                <%= form.number_field :books_quantity, class: "form-control", placeholder: "quantidade atual de livros" %>
+              </div>
+
+              <hr class="my-4">
+              <div class="actions mb-2">
+                <%= form.submit "Submeter", class: 'btn btn-success' %>
+              </div>
+            <% end %>
+              <div class='text-center'>
+                <%= link_to 'Voltar', book_sections_path, class: "btn btn-danger" %>
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
   </div>
-
-  <div class="field">
-    <%= form.label :max_quantity %>
-    <%= form.number_field :max_quantity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :books_quantity %>
-    <%= form.number_field :books_quantity %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
