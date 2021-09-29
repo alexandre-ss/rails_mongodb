@@ -6,6 +6,6 @@ Testing Rails + MongoDB
 * Rails version 6.1.4
 * Linux Minu 20.0
 
-para rodar o projeto, necessita de adicionar e configurar o arquivo mongoid.yml:
+to run this project it is needed to add and configure the mongoid.yml file:
 
 - rails g mongoid:config
